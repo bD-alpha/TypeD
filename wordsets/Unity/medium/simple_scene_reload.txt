@@ -1,0 +1,10 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+public class Res : MonoBehaviour {
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.R)) {
+			int idx = SceneManager.GetActiveScene().buildIndex;
+			SceneManager.LoadScene(idx);
+		}
+	}
+}

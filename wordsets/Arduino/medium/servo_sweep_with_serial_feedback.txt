@@ -1,0 +1,20 @@
+#include <Servo.h>
+Servo myS;
+int p = 0;
+int st = 1;
+void setup() {
+	myS.attach(9);
+	Serial.begin(9600);
+	Serial.println("Servo Initialized");
+}
+void loop() {
+	myS.write(p);
+	Serial.print("Position: ");
+	Serial.println(p);
+	p += st;
+	if (p <= 0 || p >= 180) {
+		st = -st;
+		Serial.println("Direction Flip");
+	}
+	delay(30);
+}

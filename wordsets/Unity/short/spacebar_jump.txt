@@ -1,0 +1,7 @@
+using UnityEngine;
+public class Jmp : MonoBehaviour {
+	void Update() {
+		if (Input.GetKeyDown("space"))
+			GetComponent<Rigidbody>().velocity = Vector3.up * 5;
+	}
+}

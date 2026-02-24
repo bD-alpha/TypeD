@@ -1,0 +1,12 @@
+using UnityEngine;
+public class Gen : MonoBehaviour {
+	public GameObject pref;
+	float t;
+	void Update() {
+		t += Time.deltaTime;
+		if (t > 2f) {
+			Instantiate(pref, transform.position, Quaternion.identity);
+			t = 0;
+		}
+	}
+}

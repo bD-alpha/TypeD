@@ -1,0 +1,19 @@
+enum States { RED, GREEN, YELLOW };
+States s = RED;
+unsigned long pt = 0;
+void setup() {
+	for (int i = 2; i <= 4; i++) pinMode(i, OUTPUT);
+}
+void loop() {
+	unsigned long ct = millis();
+	if (s == RED && ct - pt > 5000) {
+		s = GREEN; pt = ct;
+	} else if (s == GREEN && ct - pt > 4000) {
+		s = YELLOW; pt = ct;
+	} else if (s == YELLOW && ct - pt > 2000) {
+		s = RED; pt = ct;
+	}
+	digitalWrite(2, s == RED);
+	digitalWrite(3, s == GREEN);
+	digitalWrite(4, s == YELLOW);
+}

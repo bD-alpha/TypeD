@@ -1,0 +1,25 @@
+#include <EEPROM.h>
+struct Config {
+	int threshold;
+	char mode;
+	bool active;
+};
+void setup() {
+	Serial.begin(9600);
+	Config c = {512, 'A', true};
+	EEPROM.put(0, c);
+	Serial.println("Settings Saved.");
+}
+void loop() {
+	Config r;
+	EEPROM.get(0, r);
+	Serial.print("Thresh: ");
+	Serial.println(r.threshold);
+	Serial.print("Mode: ");
+	Serial.println(r.mode);
+	Serial.print("Status: ");
+	Serial.println(r.active ? "ON" : "OFF");
+	r.threshold += 1;
+	EEPROM.put(0, r);
+	delay(5000);
+}

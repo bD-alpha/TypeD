@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="QuoteSyntaxHighlighter" format=3 uid="uid://be6q65yaxnpy3"]
+
+[ext_resource type="Script" uid="uid://cyjquyhbchv1l" path="res://scripts/quote_syntax_highlighter.gd" id="1_o255x"]
+
+[resource]
+script = ExtResource("1_o255x")
+metadata/_custom_type_script = "uid://cyjquyhbchv1l"

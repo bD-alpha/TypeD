@@ -1,0 +1,19 @@
+unsigned long t1 = 0, t2 = 0;
+bool st1 = 0, st2 = 0;
+void setup() {
+	pinMode(12, OUTPUT);
+	pinMode(13, OUTPUT);
+	Serial.begin(9600);
+}
+void loop() {
+	unsigned long m = millis();
+	if (m - t1 >= 333) {
+		t1 = m; st1 = !st1;
+		digitalWrite(12, st1);
+	}
+	if (m - t2 >= 1000) {
+		t2 = m; st2 = !st2;
+		digitalWrite(13, st2);
+		Serial.println("Tick");
+	}
+}

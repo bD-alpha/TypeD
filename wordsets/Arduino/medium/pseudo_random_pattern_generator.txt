@@ -1,0 +1,11 @@
+void setup() {
+	for(int i = 2; i < 6; i++) pinMode(i, OUTPUT);
+	randomSeed(analogRead(0));
+}
+void loop() {
+	int p = random(2, 6);
+	digitalWrite(p, HIGH);
+	delay(random(50, 500));
+	digitalWrite(p, LOW);
+	delay(50);
+}

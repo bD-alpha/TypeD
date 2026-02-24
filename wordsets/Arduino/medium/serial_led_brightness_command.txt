@@ -1,0 +1,14 @@
+void setup() {
+	Serial.begin(9600);
+	pinMode(10, OUTPUT);
+}
+void loop() {
+	if (Serial.available() > 0) {
+	int val = Serial.parseInt();
+		if (val >= 0 && val <= 255) {
+			analogWrite(10, val);
+			Serial.print("Set to: ");
+			Serial.println(val);
+		}
+	}
+}

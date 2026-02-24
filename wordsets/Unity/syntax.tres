@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="QuoteSyntaxHighlighter" format=3 uid="uid://ch5kvlwycpmqx"]
+
+[ext_resource type="Script" uid="uid://cyjquyhbchv1l" path="res://scripts/quote_syntax_highlighter.gd" id="1_xy2x6"]
+
+[resource]
+script = ExtResource("1_xy2x6")
+base_color = Color(0.9254902, 0.9372549, 0.95686275, 1)
+punctuation_color = Color(0.5058824, 0.6313726, 0.75686276, 1)
+number_color = Color(0.56078434, 0.7372549, 0.73333335, 1)
+keyword_groups = Dictionary[StringName, PackedStringArray]({
+&"classes": PackedStringArray("Vector2", "Vector3", "Quaternion", "Color", "Rigidbody", "MeshRenderer", "Material", "Time", "Input", "Mathf", "Random", "Debug", "Console", "MonoBehaviour", "SceneManager", "GameObject", "Queue", "CharacterController", "Ray", "Physics", "Camera", "UnityEvent", "Dictionary", "Transform", "Text", "UnityEvent", "Renderer"),
+&"keywords": PackedStringArray("using", "public", "class", "private", "new", "return", "if", "else", "while", "for", "switch", "case", "protected", "internal", "static", "namespace", "base", "this", "abstract", "virtual", "override", "interface", "enum", "struct", "try", "catch", "finally", "throw", "default", "foreach", "in", "do", "break", "continue", "true", "false", "as", "is", "const", "readonly", "yield", "null"),
+&"types": PackedStringArray("int", "float", "long", "double", "byte", "short", "var", "string", "void")
+})
+groups_colors = Dictionary[StringName, Color]({
+&"classes": Color(0.6392157, 0.74509805, 0.54901963, 1),
+&"keywords": Color(0.7058824, 0.5568628, 0.6784314, 1),
+&"types": Color(0.53333336, 0.7529412, 0.8156863, 1)
+})
+line_tags_colors = Dictionary[String, Color]({
+"//": Color(0.84705883, 0.87058824, 0.9137255, 1)
+})
+string_color = Color(0.92156863, 0.79607844, 0.54509807, 1)
+metadata/_custom_type_script = "uid://cyjquyhbchv1l"

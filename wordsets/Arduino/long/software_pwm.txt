@@ -1,0 +1,17 @@
+int p = 13, br = 0, dir = 1;
+void setup() {
+	pinMode(p, OUTPUT);
+}
+void loop() {
+	for (int i = 0; i < 100; i++) {
+		if (i < br) digitalWrite(p, HIGH);
+		else digitalWrite(p, LOW);
+		delayMicroseconds(100);
+	}
+	static unsigned long lt = 0;
+	if (millis() - lt > 20) {
+		lt = millis();
+		br += dir;
+		if (br <= 0 || br >= 100) dir *= -1;
+	}
+}

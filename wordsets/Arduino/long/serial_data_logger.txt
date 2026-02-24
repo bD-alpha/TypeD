@@ -1,0 +1,21 @@
+int mn = 1024, mx = 0;
+void setup() {
+	Serial.begin(9600);
+	Serial.println("Logger Start");
+}
+void loop() {
+	int c = analogRead(A0);
+	if (c < mn) mn = c;
+	if (c > mx) mx = c;
+	Serial.print("Cur:");
+	Serial.print(c);
+	Serial.print(" Min:");
+	Serial.print(mn);
+	Serial.print(" Max:");
+	Serial.println(mx);
+	if (Serial.read() == 'r') {
+		mn = 1024; mx = 0;
+		Serial.println("Reset");
+	}
+	delay(500);
+}

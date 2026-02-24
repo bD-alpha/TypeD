@@ -1,0 +1,8 @@
+using UnityEngine;
+public class FolowMouse : MonoBehaviour {
+	void Update() {
+		Vector3 p = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		p.z = 0;
+		transform.position = p;
+	}
+}

@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://d1g38mr2pfxd2"]
+
+[ext_resource type="Script" uid="uid://djdthvgo2n8dn" path="res://scripts/typing_session.gd" id="2_awvtg"]
+[ext_resource type="PackedScene" uid="uid://dinlxcp8sfni5" path="res://scenes/words_display.tscn" id="2_oagli"]
+[ext_resource type="PackedScene" uid="uid://b2hnvu7mtqya0" path="res://scenes/quote_display.tscn" id="4_awvtg"]
+[ext_resource type="Script" uid="uid://b6e12v8jswa5t" path="res://scripts/vignette_panel.gd" id="5_fvx5s"]
+
+[sub_resource type="Gradient" id="Gradient_fvx5s"]
+colors = PackedColorArray(0.23137255, 0.25882354, 0.32156864, 0, 0.23137255, 0.25882354, 0.32156864, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_42uiv"]
+gradient = SubResource("Gradient_fvx5s")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.3)
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6ekbg"]
+texture = SubResource("GradientTexture2D_42uiv")
+expand_margin_left = 13.0
+expand_margin_top = 13.0
+expand_margin_right = 13.0
+expand_margin_bottom = 13.0
+
+[node name="TypingSession" type="Control" unique_id=1257291554]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+script = ExtResource("2_awvtg")
+
+[node name="Switches" type="VBoxContainer" parent="." unique_id=996663108]
+layout_mode = 0
+offset_right = 88.0
+offset_bottom = 66.0
+focus_behavior_recursive = 1
+
+[node name="TimeSwitch" type="CheckButton" parent="Switches" unique_id=36952553]
+unique_name_in_owner = true
+layout_mode = 2
+focus_behavior_recursive = 1
+text = "Time"
+flat = true
+
+[node name="WPMSwitch" type="CheckButton" parent="Switches" unique_id=811246939]
+unique_name_in_owner = true
+layout_mode = 2
+focus_behavior_recursive = 1
+text = "WPM"
+flat = true
+
+[node name="Displays" type="HBoxContainer" parent="." unique_id=1911622664]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -54.0
+offset_right = 54.0
+offset_bottom = 23.0
+grow_horizontal = 2
+size_flags_vertical = 0
+focus_behavior_recursive = 1
+theme_override_constants/separation = 16
+
+[node name="TimeDisplay" type="Label" parent="Displays" unique_id=876381535]
+unique_name_in_owner = true
+layout_mode = 2
+focus_behavior_recursive = 1
+text = "Time: "
+
+[node name="WPMDisplay" type="Label" parent="Displays" unique_id=695432981]
+unique_name_in_owner = true
+layout_mode = 2
+focus_behavior_recursive = 1
+text = "WPM:"
+
+[node name="TextDisplays" type="PanelContainer" parent="." unique_id=147332318]
+clip_children = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21875
+anchor_top = 0.21450618
+anchor_right = 0.78125
+anchor_bottom = 0.78549385
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+theme_type_variation = &"PanelContainerBase"
+metadata/_edit_use_anchors_ = true
+
+[node name="WordsDisplayContainer" type="Control" parent="TextDisplays" unique_id=1292343892]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_behavior_recursive = 1
+
+[node name="WordsDisplay" parent="TextDisplays/WordsDisplayContainer" unique_id=1659747065 instance=ExtResource("2_oagli")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_bottom = 20.0
+grow_vertical = 2
+focus_behavior_recursive = 1
+
+[node name="QuoteDisplayContainer" type="Control" parent="TextDisplays" unique_id=1806729825]
+layout_mode = 2
+size_flags_vertical = 4
+focus_behavior_recursive = 1
+
+[node name="QuoteDisplay" parent="TextDisplays/QuoteDisplayContainer" unique_id=259248118 instance=ExtResource("4_awvtg")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+
+[node name="VignettePanel" type="Panel" parent="TextDisplays" unique_id=756735298]
+unique_name_in_owner = true
+layout_mode = 2
+focus_behavior_recursive = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_6ekbg")
+script = ExtResource("5_fvx5s")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=391343494]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.035590276
+anchor_top = 0.9089506
+anchor_right = 0.9644097
+anchor_bottom = 0.94135803
+grow_horizontal = 2
+grow_vertical = 2
+focus_behavior_recursive = 1
+metadata/_edit_use_anchors_ = true

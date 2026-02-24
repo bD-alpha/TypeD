@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b2hnvu7mtqya0"]
+
+[ext_resource type="Script" uid="uid://c5dbx6sk60h0n" path="res://scripts/quote_display.gd" id="1_icj7l"]
+
+[node name="QuoteDisplay" type="RichTextLabel" unique_id=259248118]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("1_icj7l")

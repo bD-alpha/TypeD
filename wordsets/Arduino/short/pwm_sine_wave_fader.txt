@@ -1,0 +1,9 @@
+void setup() {
+	pinMode(9, OUTPUT);
+}
+void loop() {
+	float r = (millis() / 1000.0) * 3.14;
+	int b = 127 + 127 * sin(r);
+	analogWrite(9, b);
+	delay(10);
+}

@@ -1,0 +1,27 @@
+#include <Servo.h>
+Servo s1;
+int last = -1;
+void setup() {
+	s1.attach(9);
+	Serial.begin(9600);
+	Serial.println("Manual Control Mode");
+}
+void loop() {
+	int r = analogRead(A0);
+	int a = map(r, 0, 1023, 0, 180);
+	if (abs(a - last) > 2) {
+		s1.write(a);
+		last = a;
+		Serial.print("Input: ");
+		Serial.print(r);
+		Serial.print(" -> Angle: ");
+		Serial.print(a);
+		Serial.println(" deg");
+	}
+	static unsigned long t = 0;
+	if (millis() - t > 1000) {
+		t = millis();
+		Serial.println("Heartbeat...");
+	}
+	delay(15);
+}

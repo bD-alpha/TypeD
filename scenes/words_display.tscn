@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dinlxcp8sfni5"]
+
+[ext_resource type="Script" uid="uid://b4wn6g6ay3kff" path="res://scripts/words_display.gd" id="1_di274"]
+
+[node name="WordsDisplay" type="RichTextLabel" unique_id=1659747065]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("1_di274")

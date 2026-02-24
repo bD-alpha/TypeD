@@ -1,0 +1,13 @@
+bool st = 0;
+void setup() {
+	pinMode(2, INPUT_PULLUP);
+	pinMode(13, OUTPUT);
+}
+void loop() {
+	if (digitalRead(2) == LOW) {
+		st = !st;
+		digitalWrite(13, st);
+		delay(200);
+		while(digitalRead(2) == LOW);
+	}
+}

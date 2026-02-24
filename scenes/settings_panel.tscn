@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://c82mtrieic6ou"]
+
+[ext_resource type="Script" uid="uid://dkdlwhax1st4e" path="res://scripts/settings_panel.gd" id="1_qtqyt"]
+
+[node name="SettingsPanel" type="PanelContainer" unique_id=451038954]
+custom_minimum_size = Vector2(200, 100)
+theme_type_variation = &"PanelContainerBase"
+script = ExtResource("1_qtqyt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1528542998]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1671372158]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1078952214]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingsPanelWordsetLabel"
+text = "Wordset:"
+
+[node name="WordsetSelector" type="OptionButton" parent="VBoxContainer/HBoxContainer" unique_id=831925372]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SettingsPanelWordsetOptionButton"
+flat = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=842066852]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=524815437]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingsPanelModeLabel"
+text = "Mode:"
+
+[node name="ModeSelector" type="OptionButton" parent="VBoxContainer/HBoxContainer2" unique_id=245702151]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SettingsPanelModeOptionButton"
+flat = true
+selected = 0
+item_count = 2
+popup/item_0/text = "Words"
+popup/item_0/id = 0
+popup/item_1/text = "Quote"
+popup/item_1/id = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=1120339339]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3" unique_id=706713013]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingsPanelCountLabel"
+text = "Count:"
+
+[node name="CountSelector" type="OptionButton" parent="VBoxContainer/HBoxContainer3" unique_id=1414959961]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SettingsPanelCountOptionButton"
+flat = true
+selected = 0
+item_count = 3
+popup/item_0/text = "25"
+popup/item_0/id = 0
+popup/item_1/text = "50"
+popup/item_1/id = 1
+popup/item_2/text = "100"
+popup/item_2/id = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer" unique_id=1006807634]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4" unique_id=1560556826]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SettingsPanelSizeLabel"
+text = "Size:"
+
+[node name="SizeSelector" type="OptionButton" parent="VBoxContainer/HBoxContainer4" unique_id=752371574]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SettingsPanelSizeOptionButton"
+flat = true
+selected = 0
+item_count = 3
+popup/item_0/text = "Short"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Long"
+popup/item_2/id = 2
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1331196892]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"SettingsPanelStartButton"
+text = "Start"

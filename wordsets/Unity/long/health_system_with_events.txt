@@ -1,0 +1,16 @@
+using UnityEngine;
+using UnityEngine.Events;
+public class Health : MonoBehaviour {
+	public float hp = 100;
+	public UnityEvent OnDeath;
+	public void Damage(float amt) {
+		hp -= amt; if(hp <= 0) Die();
+	}
+	void Die() {
+		OnDeath?.Invoke();
+		Destroy(gameObject);
+	}
+	private void OnCollisionEnter(Collision c) {
+		if(c.gameObject.CompareTag("Enemy")) Damage(10);
+	}
+}

@@ -1,0 +1,14 @@
+const int sz = 10;
+int rd[sz], idx = 0, tot = 0;
+void setup() {
+	Serial.begin(9600);
+}
+void loop() {
+	tot -= rd[idx];
+	rd[idx] = analogRead(A0);
+	tot += rd[idx];
+	idx = (idx + 1) % sz;
+	float avg = tot / (float)sz;
+	Serial.println(avg);
+	delay(50);
+}

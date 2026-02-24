@@ -1,0 +1,16 @@
+using UnityEngine;
+public class Phys : MonoBehaviour {
+	CharacterController cc;
+	Vector3 v;
+	void Start() {
+		cc = GetComponent<CharacterController>();
+	}
+	void Update() {
+	if (cc.isGrounded && v.y < 0) v.y = 0f;
+		float x = Input.GetAxis("Horizontal");
+		Vector3 move = transform.right * x;
+		cc.Move(move * Time.deltaTime * 5f);
+		v.y += -9.81f * Time.deltaTime;
+		cc.Move(v * Time.deltaTime);
+	}
+}

@@ -1,0 +1,17 @@
+using UnityEngine;
+using UnityEngine.UI;
+public class HP : MonoBehaviour {
+	public float hp = 100;
+	public Text txt;
+	public void Damage(float d) {
+		hp -= d;
+		if (hp <= 0) {
+			hp = 0;
+			Debug.Log("Game Over");
+		}
+		if (txt) txt.text = "Health: " + hp.ToString("F0");
+	}
+	void OnCollisionEnter(Collision c) {
+		if (c.gameObject.layer == 8) Damage(10);
+	}
+}

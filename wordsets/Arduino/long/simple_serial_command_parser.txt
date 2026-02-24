@@ -1,0 +1,22 @@
+void setup() {
+	Serial.begin(9600);
+	pinMode(13, OUTPUT);
+}
+void loop() {
+	if (Serial.available() > 0) {
+		String in = Serial.readStringUntil('\n');
+		in.trim();
+		if (in.equals("START")) {
+			digitalWrite(13, HIGH);
+			Serial.println("System Active");
+		}
+		else if (in.equals("STOP")) {
+			digitalWrite(13, LOW);
+			Serial.println("System Halted");
+		}
+		else {
+			Serial.print("Unknown: ");
+			Serial.println(in);
+		}
+	}
+}

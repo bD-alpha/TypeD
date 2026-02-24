@@ -1,0 +1,10 @@
+using UnityEngine;
+public class Clr : MonoBehaviour {
+	public Color c1 = Color.red;
+	public Color c2 = Color.blue;
+	void Update() {
+		Renderer r = GetComponent<Renderer>();
+		float t = Mathf.PingPong(Time.time, 1);
+		r.material.color = Color.Lerp(c1, c2, t);
+	}
+}

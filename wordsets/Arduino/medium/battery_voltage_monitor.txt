@@ -1,0 +1,12 @@
+void setup() {
+	Serial.begin(9600);
+}
+void loop() {
+	int raw = analogRead(A1);
+	float v = raw * (5.0 / 1023.0) * 2.0;
+	Serial.print("Battery: ");
+	Serial.print(v);
+	Serial.println("V");
+	if (v < 3.4) Serial.println("LOW!");
+	delay(2000);
+}

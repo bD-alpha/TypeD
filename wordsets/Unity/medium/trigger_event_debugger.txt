@@ -1,0 +1,8 @@
+using UnityEngine;
+public class Warn : MonoBehaviour {
+	void OnTriggerEnter(Collider other) {
+		Debug.Log($"Entered by {other.name}");
+		GetComponent<Renderer>().material.color = Color.red;
+	}
+	void OnTriggerExit() => Debug.Log("Area Cleared");
+}

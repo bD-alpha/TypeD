@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://ds3d04bmd0rsb"]
+
+[ext_resource type="Script" uid="uid://d2v8mqp1ytpc" path="res://scripts/results_panel.gd" id="1_ccmgd"]
+[ext_resource type="Script" uid="uid://bictyhbnntfdk" path="res://scripts/wpm_graph.gd" id="2_3tniq"]
+
+[node name="ResultsPanel" type="PanelContainer" unique_id=819113141]
+custom_minimum_size = Vector2(300, 200)
+offset_right = 203.0
+offset_bottom = 113.0
+theme_type_variation = &"PanelContainerBase"
+script = ExtResource("1_ccmgd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2071069805]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=646069327]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer" unique_id=255351373]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/PanelContainer" unique_id=1289692979]
+layout_mode = 2
+columns = 2
+
+[node name="Label1" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/GridContainer" unique_id=1773173514]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wordset:"
+
+[node name="WordsetLabel" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/GridContainer" unique_id=727854892]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/GridContainer" unique_id=1957926151]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mode:"
+
+[node name="ModeLabel" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/GridContainer" unique_id=689505399]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/GridContainer" unique_id=1537929144]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Size:"
+
+[node name="SizeLabel" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/GridContainer" unique_id=1010137520]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/GridContainer" unique_id=360514005]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Start time:"
+
+[node name="StartTimeLabel" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer/GridContainer" unique_id=1046014309]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="VBoxContainer/HBoxContainer" unique_id=84857098]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/PanelContainer2" unique_id=1907499054]
+layout_mode = 2
+columns = 2
+
+[node name="Label1" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer2/GridContainer" unique_id=340163363]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "WPM:"
+
+[node name="WPMLabel" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer2/GridContainer" unique_id=1512682891]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer2/GridContainer" unique_id=924822693]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Accuracy:"
+
+[node name="AccuracyLabel" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer2/GridContainer" unique_id=575630043]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer2/GridContainer" unique_id=1568228010]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Time:"
+
+[node name="TimeLabel" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer2/GridContainer" unique_id=338880410]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer2/GridContainer" unique_id=850934768]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mistakes:"
+
+[node name="MistakesLabel" type="Label" parent="VBoxContainer/HBoxContainer/PanelContainer2/GridContainer" unique_id=1249667124]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="WPMGraph" type="PanelContainer" parent="VBoxContainer" unique_id=1645387239]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_3tniq")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1101417353]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=2019787261]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1573541487]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 0)
+layout_mode = 2
+theme_type_variation = &"ResultsPanelRestartButton"
+text = "Restart"
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=583883371]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer2" unique_id=1916102117]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(86, 0)
+layout_mode = 2
+theme_type_variation = &"ResultsPanelMenuButton"
+text = "Menu"
+
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer2" unique_id=1525075055]
+layout_mode = 2
+size_flags_horizontal = 3

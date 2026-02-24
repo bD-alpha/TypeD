@@ -1,0 +1,7 @@
+using UnityEngine;
+public class Del : MonoBehaviour {
+	void OnMouseDown() {
+		Destroy(gameObject);
+		Debug.Log("Object Removed");
+	}
+}

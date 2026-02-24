@@ -1,0 +1,17 @@
+#include <SoftwareSerial.h>
+SoftwareSerial myS(10, 11);
+void setup() {
+	Serial.begin(9600);
+	myS.begin(4800);
+	Serial.println("Bridge Ready");
+}
+void loop() {
+	if (myS.available()) {
+		char c = myS.read();
+		Serial.write(c);
+	}
+	if (Serial.available()) {
+		char c = Serial.read();
+		myS.write(c);
+	}
+}

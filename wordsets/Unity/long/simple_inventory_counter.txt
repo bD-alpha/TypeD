@@ -1,0 +1,12 @@
+using UnityEngine;
+using System.Collections.Generic;
+public class Inv : MonoBehaviour {
+	Dictionary<string, int> items = new Dictionary<string, int>();
+	void OnTriggerEnter(Collider c) {
+		string n = c.gameObject.name;
+		if (!items.ContainsKey(n)) items[n] = 0;
+		items[n]++;
+		Debug.Log("Collected " + n + ": " + items[n]);
+		Destroy(c.gameObject);
+	}
+}

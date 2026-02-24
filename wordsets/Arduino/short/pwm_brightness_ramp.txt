@@ -1,0 +1,11 @@
+int b = 0;
+void setup() {
+	pinMode(9, 1);
+}
+void loop() {
+	analogWrite(9, b);
+	b += 5;
+	if(b > 255) b = 0;
+	delay(30);
+	Serial.println(b);
+}
